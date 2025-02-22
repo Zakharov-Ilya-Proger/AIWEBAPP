@@ -36,7 +36,7 @@ async def block_ips(request: Request, call_next):
 
 @app.get("/")
 async def root():
-    return {"message": "Hello World"}
+    return {"message": "Darova Zaebal"}
 
 
 @app.get("/question/{userid}")
