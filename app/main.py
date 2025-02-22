@@ -46,8 +46,3 @@ async def get_question(userid: str):
     if isinstance(response, HTTPException):
         raise response
     return {'message': response}
-
-
-@app.on_event('shutdown')
-async def shutdown():
-    requests.get(url=settings.REBOOT_HOOK)
