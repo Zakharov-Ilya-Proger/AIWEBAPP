@@ -41,7 +41,7 @@ async def root():
 
 @app.get("/question/{userid}")
 async def get_question(userid: str):
-    user_doc = db.collection('user_session').document(userid).get()
+    user_doc = db.collection('user_sessions').document(userid).get()
     response = await send_to_gpt(user_doc.to_dict()['prompt'], user_doc.to_dict()['lang'])
     if isinstance(response, HTTPException):
         raise response
